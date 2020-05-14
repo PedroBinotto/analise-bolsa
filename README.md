@@ -1,10 +1,10 @@
 # Análise-Bolsa
 
-* **templates**.....*Documentos HTML*
+* **templates**.......*Documentos HTML*
   - layout.html
   - index.html
 
-* **static**........*CSS e JavaScript*
+* **static**............*CSS e JavaScript*
   * **CSS**.........*CSS para estilo da página*
     - styles.css
 
