@@ -1,16 +1,12 @@
 # Análise-Bolsa
 
-* **templates**...........*Documentos HTML*
+* **templates** - *Documentos HTML*
   - layout.html
   - index.html
-
-* **static**..............*CSS e JavaScript*
-  * **CSS**.........*CSS para estilo da página*
+* **static** - *CSS e JavaScript*
+  * **CSS** - *CSS para estilo da página*
     - styles.css
-
-  * **JS**..........*Scripts JS processados pelo navegador*
+  * **JS** - *Scripts JS processados pelo navegador*
     - app.js
-
-* **pycache**.......*Cache*
-
-- app.py............*Aplicativo principal python+flask*
+* **pycache** - *Cache*
+- app.py - *Aplicativo principal python+flask*
