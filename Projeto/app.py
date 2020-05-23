@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-os.environ['IEX_TOKEN'] = 'Tpk_55f162dd34c248b0a92b41a417c0da25'
+os.environ['IEX_TOKEN'] = 'pk_19313062487e43ceaedce40e63973a12'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/pedro/Desktop/Programas/investimento-joao/Projeto/stocks.db'
 app.config['SECRET_KEY'] = 'mysecret'
 db = SQLAlchemy(app)
