@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Relatório</title>
+		<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='CSS/styles.css') }}" />
+		<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='CSS/bootstrap.css') }}" />
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="header">
+    	<h1><span id="header_text">Header</span></h1>
+    	</div>
+
+    	<nav id="navigation_ID" class="navbar navbar-inverse">
+		    <div class="container-fluid">
+		        <ul class="nav navbar-nav">
+		        <li><a href="#">#</a></li>
+				</ul>
+		    </div>
+		</nav>
+		<div class="center">
+		{% block body %}
+		{% endblock %}
+		</div>
+	</body>
+</html>
