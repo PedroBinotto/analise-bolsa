@@ -10,3 +10,10 @@
     - app.js
 * **pycache** - *Cache*
 - app.py - *Aplicativo principal python+flask*
+
+**Módulos utilizados:**
+  * *Flask*
+    * *Flask-WTF*
+    * *Flask-Bootstrap
+  * *YFinance*
+  * *WTForms*
