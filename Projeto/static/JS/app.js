@@ -50,32 +50,41 @@ function createControll(NoOfRec) {
 }
 
 function jsonData(json) {
-  console.log(json)
+  cab = ['Ação', 'Valor total'];
+  json_array.push(cab);
+
+  for (var j = 0; j < json.length; j++) { // Elementos [1] e [4]
+    var array2 = [0, 3];
+    json[j] = array2.map(i => json[j][i]);
+
+    json_array.push(json[j]);
+  }
+
+  console.log(json_array);
 }
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  if (json_array.length < 2) {
+    var apology = document.getElementById('chart_div');
+    apology.innerHTML += '';
+    return;
+  }
 
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-        };
+  var data = google.visualization.arrayToDataTable(json_array);
 
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+  var options = {
+    title: 'Análise Superficial',
+    pieHole: 0.4,
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
 /*
 var json_array = [];
 titulo = ''
