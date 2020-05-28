@@ -16,19 +16,14 @@
 				</ul>
 		    </div>
 		</nav>
-		<div class="center">
 		{% block body %}
 		{% endblock %}
-		</div>
 	</body>
 </html>
 
-
-<!-- Link de script 
-
-	<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-	<script type="text/javascript">
-		var data = {{ j_data|safe }};
-		jsonData(data);
-	</script>
--->
+<script type="text/javascript" src="{{ url_for('static', filename='JS/jquery-3.5.1.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='JS/app.js') }}"></script>
+<script type="text/javascript">
+	var data = {{ j_data|safe }};
+	jsonData(data);
+</script>

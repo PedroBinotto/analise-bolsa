@@ -1,5 +1,39 @@
 {% extends 'layout.html' %}
 
-{% block body %}
-
+{% block head %}
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 {% endblock %}
+
+{% block body %}
+<div class="container">
+	<div id="dvMain">
+		<label id="lblNoOfRec"> Número de companhias: </label>
+		<input type='number' min='1' id="txtNoOfRec" />
+		<input type="button" value="GERAR" id="btnNoOfRec" class="button" />
+	</div>
+	<br />
+	<form action="/" method="POST">
+		<div id="AddControll">
+
+		</div>
+	</form>
+</div>
+<!--<div id="chart_div"></div>-->
+{% endblock %}
+
+<!--
+<div class="container">
+    <div id="dvMain">
+        <label id="lblNoOfRec"> Enter Value For Create No Of Rows </label>
+        <input type="text" id="txtNoOfRec" />
+        <input type="button" value="CREATE" id="btnNoOfRec" />
+    </div>
+    <br />
+    <div id="AddControll">
+
+    </div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.5.1.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+-->

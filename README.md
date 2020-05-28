@@ -14,6 +14,6 @@
 **Módulos utilizados:**
   * *Flask*
     * *Flask-WTF*
-    * *Flask-Bootstrap
+    * *Flask-Bootstrap*
   * *YFinance*
   * *WTForms*

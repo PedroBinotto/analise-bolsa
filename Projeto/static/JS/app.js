@@ -1,3 +1,61 @@
+$(document).ready(function () {
+    load();
+});
+
+var json_array = [];
+
+function load() {
+    //alert("Working...");
+    $("#txtNoOfRec").focus();
+
+    $("#btnNoOfRec").click(function () {
+        $("#AddControll").empty();
+        var NoOfRec = $("#txtNoOfRec").val();
+
+        //alert("" + NoOfRec);
+
+        if (NoOfRec > 0) {
+            createControll(NoOfRec);
+        }
+    });    
+}
+
+function createControll(NoOfRec) {
+    var tbl = "";
+
+    tbl = "<table class='table table-bordered table-hover'>"+
+                "<tr class='table_header'>"+
+                    "<th> No </th>"+
+                    "<th> Símbolo </th>"+
+                    "<th> Quantidade </th>"+
+                "</tr>";
+
+    for (i = 1; i <= NoOfRec; i++) {
+        tbl += "<tr>" +
+                    "<td>" + i + "</td>" +
+
+                    "<td>"+
+                        "<input type='text' id='txtFName' name='symbol" + i + "'' placeholder='Ex: AAPL...' required>"+
+                    "</td>"+
+
+                    "<td>"+
+                        "<input type='number' id='quantity' name='quantity" + i + "'' min='1' required>"+
+                    "</td>"+
+                "</tr>";
+    }
+    tbl += "</table>" +
+    "<input type='submit' value='OK' class='button'>";
+
+    $("#AddControll").append(tbl);
+}
+
+function jsonData(json) {
+  console.log(json)
+}
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
 google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
@@ -15,7 +73,7 @@ google.charts.load("current", {packages:["corechart"]});
           pieHole: 0.4,
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
 /*
