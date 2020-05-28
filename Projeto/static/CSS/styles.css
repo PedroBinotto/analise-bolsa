@@ -2,6 +2,11 @@
 	border-radius: 0;
 }
 
+#chart_div {
+	display: block;
+	margin: 0 auto;
+}
+
 body{
 	background-color:darkslategrey;
 	color:white;
@@ -27,4 +32,10 @@ body{
 	background-color: DodgerBlue !important;
 	color: White !important;
 	font-weight: bold;
+}
+
+.fullWidth {
+	width: 70%;
+	margin: 0 auto;
+	background-color: White;
 }

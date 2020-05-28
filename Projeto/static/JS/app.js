@@ -80,6 +80,16 @@ function drawChart() {
   var options = {
     title: 'Análise Superficial',
     pieHole: 0.4,
+    chartArea: {
+      height: '94%',
+      width: '100%'
+    },
+    width: '100%',
+    height: 800,
+    legend: {
+      alignment: 'center',
+      position: 'bottom'
+    }
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
