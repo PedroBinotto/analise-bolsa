@@ -25,13 +25,19 @@ def index():
 	json_data = []
 	if request.method == 'GET':
 		json_data = json.dumps(json_data)
-		return render_template('index.html', j_data=json_data)
+		info = []
+		cb = []
+		return render_template('index.html', j_data=json_data, info=info, cb=cb)
 	else:
 		data = request.form
 		for i in grouper(2, data.values()):
 			json_data.append(quote(i))
+		info = json_data
+		cb = []
+		for i in info:
+			cb.append(i[0])
 		json_data = json.dumps(json_data)		
-		return render_template('index.html', j_data=json_data)
+		return render_template('index.html', j_data=json_data, info=info, cb=cb)
 
 
 if __name__ == '__main__':

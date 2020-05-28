@@ -18,7 +18,25 @@
 		</div>
 	</form>
 </div>
-<div id="tabela"></div>
+<div class="fullWidth">
+	<div id="tabela">
+		<table class='table table-bordered table-hover'>
+			<tr class="table_header">
+				<th>Ação</th>
+				<th>Preço</th>
+				<th>Quantidade</th>
+				<th>Total</th>
+			</tr>
+			{% for row in info %}
+				<tr>
+					{% for i in row %}
+						<td>{{ i }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
 <div class="fullWidth">
 	<div id="chart_div"></div>
 </div>
