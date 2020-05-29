@@ -17,9 +17,11 @@ def quote(query):
 	try:
 		stock = str(query[0])
 		amnt = int(query[1])
-		prc = (yf.Ticker(stock)).info['regularMarketPreviousClose']
+		tickr = yf.Ticker(stock)
+		prc = tickr.info['regularMarketPreviousClose']
 		val = prc * amnt
-		return [stock, prc, amnt, val]
+		currency = tickr.info['currency']
+		return [stock, prc, amnt, val, currency]
 	except:
 		return ['SÍMBOLO INVÁLIDO', 0, 0, 0]
 
