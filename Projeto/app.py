@@ -2,6 +2,7 @@ import yfinance as yf
 from flask import Flask, request, render_template, url_for
 from flask_bootstrap import Bootstrap
 from itertools import zip_longest
+from forex_python.converter import CurrencyRates
 import datetime
 import json
 import decimal
@@ -15,13 +16,19 @@ def grouper(n, iterable, fillvalue=None):
 
 def quote(query):
 	try:
+		c = CurrencyRates()
+
 		stock = str(query[0])
 		amnt = int(query[1])
+
 		tickr = yf.Ticker(stock)
 		prc = tickr.info['regularMarketPreviousClose']
-		val = prc * amnt
 		currency = tickr.info['currency']
-		return [stock, prc, amnt, val, currency]
+
+		prc = round(c.convert(currency, 'BRL', prc), 2)
+		val = prc * amnt
+
+		return [stock, prc, amnt, val, 'BRL']
 	except:
 		return ['SÍMBOLO INVÁLIDO', 0, 0, 0]
 
