@@ -12,6 +12,32 @@ body{
 	color:white;
 }
 
+.spacer {
+	height: 25px;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	background-color: #333333;
+}
+
+.footer-note {
+	display: inline-block;
+	text-align: center;
+	position: fixed;
+	bottom: 50px;
+	color: Gray;
+	font-weight: bold;
+}
+
+.tab_d {
+	text-align: center;
+}
+
 .button {
 	border: solid White 2px;
 	color: white;
@@ -38,4 +64,8 @@ body{
 	width: 70%;
 	margin: 0 auto;
 	background-color: White;
+}
+
+.margin {
+	margin: 25px;
 }

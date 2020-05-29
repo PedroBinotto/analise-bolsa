@@ -59,8 +59,6 @@ function jsonData(json) {
 
     json_array.push(json[j]);
   }
-
-  console.log(json_array);
 }
 
 google.charts.load('current', {'packages':['corechart']});

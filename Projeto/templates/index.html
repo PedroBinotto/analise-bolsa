@@ -13,32 +13,34 @@
 	</div>
 	<br />
 	<form action="/" method="POST">
-		<div id="AddControll">
+		<div id="AddControll" class="margin">
 
 		</div>
 	</form>
 </div>
 <div class="fullWidth">
-	<div id="tabela">
+	<div id="tabela" class="margin">
 		<table class='table table-bordered table-hover'>
-			<tr class="table_header">
-				<th>Ação</th>
-				<th>Preço</th>
-				<th>Quantidade</th>
-				<th>Total</th>
-			</tr>
-			{% for row in info %}
-				<tr>
-					{% for i in row %}
-						<td>{{ i }}</td>
-					{% endfor %}
+			{% if render == 1 %}
+				<tr class="table_header">
+					<th class='tab_d'>Ação</th>
+					<th class='tab_d'>Preço</th>
+					<th class='tab_d'>Quantidade</th>
+					<th class='tab_d'>Total</th>
 				</tr>
-			{% endfor %}
+				{% for row in info %}
+					<tr>
+						{% for i in row %}
+							<td class='tab_d'>{{ i }}</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			{% endif %}
 		</table>
 	</div>
 </div>
 <div class="fullWidth">
-	<div id="chart_div"></div>
+	<div id="chart_div" class="margin"></div>
 </div>
 {% endblock %}
 
