@@ -17,3 +17,4 @@
   * *YFinance*
   * *HTML5lib*
   * *BeautifulSoup4*
+  * *Forex-Python*
