@@ -14,11 +14,14 @@ def grouper(n, iterable, fillvalue=None):
     return zip_longest(fillvalue=fillvalue, *args)
 
 def quote(query):
-	stock = str(query[0])
-	amnt = int(query[1])
-	prc = (yf.Ticker(stock)).info['regularMarketPreviousClose']
-	val = prc * amnt
-	return [stock, prc, amnt, val]
+	try:
+		stock = str(query[0])
+		amnt = int(query[1])
+		prc = (yf.Ticker(stock)).info['regularMarketPreviousClose']
+		val = prc * amnt
+		return [stock, prc, amnt, val]
+	except:
+		return ['SÍMBOLO INVÁLIDO', 0, 0, 0]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
