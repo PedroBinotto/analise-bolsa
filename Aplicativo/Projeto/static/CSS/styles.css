@@ -1,0 +1,71 @@
+#navigation_ID {
+	border-radius: 0;
+}
+
+#chart_div {
+	display: block;
+	margin: 0 auto;
+}
+
+body{
+	background-color:darkslategrey;
+	color:white;
+}
+
+.spacer {
+	height: 25px;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	background-color: #333333;
+}
+
+.footer-note {
+	display: inline-block;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	color: Gray;
+	font-weight: bold;
+}
+
+.tab_d {
+	text-align: center;
+}
+
+.button {
+	border: solid White 2px;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	background-color: DodgerBlue;
+}
+
+.button:hover {
+	background-color: Navy;
+}
+
+.table_header {
+	background-color: DodgerBlue !important;
+	color: White !important;
+	font-weight: bold;
+}
+
+.fullWidth {
+	width: 70%;
+	margin: 0 auto;
+	background-color: White;
+}
+
+.margin {
+	margin: 25px;
+}
