@@ -13,9 +13,7 @@
 
 **Módulos utilizados:**
   * *Flask*
-    * *Flask-WTF*
     * *Flask-Bootstrap*
   * *YFinance*
-  * *WTForms*
   * *HTML5lib*
   * *BeautifulSoup4*
