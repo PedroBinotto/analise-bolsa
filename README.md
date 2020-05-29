@@ -17,3 +17,5 @@
     * *Flask-Bootstrap*
   * *YFinance*
   * *WTForms*
+  * *HTML5lib*
+  * *BeautifulSoup4*
