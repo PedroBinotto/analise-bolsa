@@ -31,8 +31,8 @@ Então:
   * cd -> 'Aplicativo'
  
   * Executar:
-    * 'pip install -e .'
     * 'pip install python-dotenv'
+    * 'pip install -e .'
 
 Para executar aplicativo:
     * 'flask run'
