@@ -24,11 +24,13 @@ Com Python 3.x, certificar-se de instalar o módulo 'setuptools';
 
 Então:
 
-1. Clonar repositório
-1. Em CMD:
-  1. cd -> Diretório root do repositoŕio
-  1. cd -> 'Aplicativo'
-  1. Executar:
-    1.'python setup.py build'
-    1.'python setup.py install'
+* Clonar repositório
+
+* Em CMD:
+  * cd -> Diretório root do repositoŕio
+  * cd -> 'Aplicativo'
+ 
+  * Executar:
+    * 'python setup.py build'
+    * 'python setup.py install'
 
