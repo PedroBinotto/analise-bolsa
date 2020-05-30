@@ -9,8 +9,9 @@ setup(
 	include_package_data=True,
 	zip_safe=False,
 	install_requires=[
-		'Flask',
+		'Flask>=0.10.1',
 		'Flask-Bootstrap',	
+		'requests>=2.20',
 		'yfinance',
 		'forex-python',
 		'BeautifulSoup4',
