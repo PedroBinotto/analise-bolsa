@@ -1,6 +1,0 @@
-Flask
-Flask-Bootstrap
-yfinance
-forex-python
-BeautifulSoup4
-html5lib

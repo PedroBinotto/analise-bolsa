@@ -1,3 +1,4 @@
 include runner README
 recursive-include Projeto/templates *
 recursive-include Projeto/static *
+global-exclude *.pyc
