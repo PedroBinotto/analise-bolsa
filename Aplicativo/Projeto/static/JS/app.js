@@ -98,16 +98,39 @@ function drawChart() {
     });
 
     btnSave.addEventListener('click', function () {
+        
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+            return true
+            }
+        };
+
         var hght = $('#print').height();
-        console.log(hght);
-        var wdth = $(window).width();
-        console.log(wdth);
+
         var doc = new jsPDF({
             unit: 'px',
-            format: [hght, wdth]
+            format: [hght, hght]
         });
+
+        margins = {
+            top: (hght * 0.5),
+            bottom: ((hght-522)*0.2),
+            left: ((hght-522)*0.2),
+            right: ((hght-522)*0.2),
+            width: 522
+        };
+
+        source = $('#tabela')[0];
         canvas = chart.getImageURI();
         doc.addImage(canvas, 0, 0,);
+        doc.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width, // max width of content on PDF
+                'elementHandlers': specialElementHandlers
+            }
+        );
         doc.save('chart.pdf');
     }, false);
 
@@ -119,5 +142,27 @@ function drawChart() {
     orientation: 'landscape',
     unit: 'in',
     format: [4, 2]
+
+specialElementHandlers = {
+        // element with id of "bypass" - jQuery style selector
+        '#bypassme': function (element, renderer) {
+            // true = "handled elsewhere, bypass text extraction"
+            return true
+        }
+    };
+margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+doc.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, // x coord
+    margins.top, { // y coord
+        'width': margins.width, // max width of content on PDF
+        'elementHandlers': specialElementHandlers
+    });
+
 }
 */
