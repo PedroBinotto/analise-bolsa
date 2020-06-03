@@ -2,6 +2,7 @@
 
 {% block head %}
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
@@ -18,31 +19,38 @@
 		</div>
 	</form>
 </div>
-<div class="fullWidth">
-	<div id="tabela" class="margin">
-		<table class='table table-bordered table-hover'>
-			{% if render == 1 %}
-				<tr class="table_header">
-					<th class='tab_d'>Ação</th>
-					<th class='tab_d'>Preço</th>
-					<th class='tab_d'>Quantidade</th>
-					<th class='tab_d'>Total</th>
-					<th class='tab_d'>Moeda</th>
-				</tr>
-				{% for row in info %}
-					<tr>
-						{% for i in row %}
-							<td class='tab_d'>{{ i }}</td>
-						{% endfor %}
+<div id="print">
+	<div class="fullWidth">
+		<div id="tabela" class="margin">
+			<table class='table table-bordered table-hover'>
+				{% if render == 1 %}
+					<tr class="table_header">
+						<th class='tab_d'>Ação</th>
+						<th class='tab_d'>Preço</th>
+						<th class='tab_d'>Quantidade</th>
+						<th class='tab_d'>Total</th>
+						<th class='tab_d'>Moeda</th>
 					</tr>
-				{% endfor %}
-			{% endif %}
-		</table>
+					{% for row in info %}
+						<tr>
+							{% for i in row %}
+								<td class='tab_d'>{{ i }}</td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+				{% endif %}
+			</table>
+		</div>
+	</div>
+	<div class="fullWidth">
+		<div id="chart_div" class="margin"></div>
 	</div>
 </div>
-<div class="fullWidth">
-	<div id="chart_div" class="margin"></div>
-</div>
+{% if render == 1 %}
+	<div>
+		<input id="save-pdf" class="button fixed" type="button" value="Salvar como PDF" disabled />
+	</div>
+{% endif %}
 {% endblock %}
 
 <!--
