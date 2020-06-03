@@ -69,3 +69,9 @@ body{
 .margin {
 	margin: 25px;
 }
+
+.fixed {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+}
