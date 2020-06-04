@@ -1,10 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function () { // Inicializar jQuery após carregar o documento
     load();
 });
 
 var json_array = [];
 
-function load() {
+function load() {   // Determinar o número de campos de pesquisa
     //alert("Working...");
     $("#txtNoOfRec").focus();
 
@@ -20,10 +20,10 @@ function load() {
     });    
 }
 
-function createControll(NoOfRec) {
+function createControll(NoOfRec) {  // Gerar campo de pesquisa
     var tbl = "";
 
-    tbl = "<table class='table table-bordered table-hover'>"+
+    tbl = "<table class='table table-bordered table-hover'>"+   // Cabeçalho
                 "<tr class='table_header'>"+
                     "<th> No </th>"+
                     "<th> Símbolo </th>"+
@@ -31,7 +31,7 @@ function createControll(NoOfRec) {
                 "</tr>";
 
     for (i = 1; i <= NoOfRec; i++) {
-        tbl += "<tr>" +
+        tbl += "<tr>" +                                         // Informaçôes
                     "<td>" + i + "</td>" +
 
                     "<td>"+
@@ -44,12 +44,12 @@ function createControll(NoOfRec) {
                 "</tr>";
     }
     tbl += "</table>" +
-    "<input type='submit' value='OK' class='button'>";
+    "<input type='submit' value='OK' class='button'>";          // Botão enviar
 
-    $("#AddControll").append(tbl);
+    $("#AddControll").append(tbl);                              // Adicionar campo
 }
 
-function jsonData(json) {
+function jsonData(json) {   // Carregar dados passados pelo python (JSON{})
     cab = ['Ação', 'Valor total'];
     json_array.push(cab);
 
@@ -61,12 +61,12 @@ function jsonData(json) {
     }
 }
     
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load('current', {'packages':['corechart']});  // Importar API Google Charts
 google.charts.setOnLoadCallback(drawChart);
 
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
+function drawChart() {  // Gerar gráfico de setores
     if (json_array.length < 2) {
         var apology = document.getElementById('chart_div');
         apology.innerHTML += '';
@@ -75,7 +75,7 @@ function drawChart() {
 
     var data = google.visualization.arrayToDataTable(json_array);
 
-    var options = {
+    var options = { // Parâmetros do gráfico
     title: 'Análise Superficial',
     pieHole: 0.4,
     chartArea: {
@@ -90,7 +90,7 @@ function drawChart() {
     }
     };
 
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));    //Varíaveis para gerar PDF
     var btnSave = document.getElementById('save-pdf');
 
     google.visualization.events.addListener(chart, 'ready', function () {
@@ -107,7 +107,7 @@ function drawChart() {
 
         var hght = $('#print').height();
 
-        var doc = new jsPDF({
+        var doc = new jsPDF({   // Dimensionar documento
             unit: 'px',
             format: [hght, hght]
         });
@@ -120,49 +120,19 @@ function drawChart() {
             width: 522
         };
 
-        source = $('#tabela')[0];
+        source = $('#tabela')[0];       // Incluir tabela de informações
         canvas = chart.getImageURI();
-        doc.addImage(canvas, 0, 0,);
-        doc.fromHTML(
-            source, // HTML string or DOM elem ref.
-            margins.left, // x coord
-            margins.top, { // y coord
-                'width': margins.width, // max width of content on PDF
+        doc.addImage(canvas, 0, 0,);    // Incluir gráfico
+        doc.fromHTML(                   // Alinhar elementos
+            source,
+            margins.left,
+            margins.top, {
+                'width': margins.width,
                 'elementHandlers': specialElementHandlers
             }
         );
-        doc.save('chart.pdf');
+        doc.save('chart.pdf');  // Salvar documento
     }, false);
 
     chart.draw(data, options);
 }
-
-/*
-{
-    orientation: 'landscape',
-    unit: 'in',
-    format: [4, 2]
-
-specialElementHandlers = {
-        // element with id of "bypass" - jQuery style selector
-        '#bypassme': function (element, renderer) {
-            // true = "handled elsewhere, bypass text extraction"
-            return true
-        }
-    };
-margins = {
-        top: 80,
-        bottom: 60,
-        left: 40,
-        width: 522
-    };
-doc.fromHTML(
-    source, // HTML string or DOM elem ref.
-    margins.left, // x coord
-    margins.top, { // y coord
-        'width': margins.width, // max width of content on PDF
-        'elementHandlers': specialElementHandlers
-    });
-
-}
-*/
