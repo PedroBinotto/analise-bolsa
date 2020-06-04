@@ -28,6 +28,11 @@ def quote(query):	# Contata API e ajusta os valores de moeda
 		prc = tickr.info['regularMarketPreviousClose']
 		currency = tickr.info['currency']
 
+		# Debug
+		print(prc)
+		print(currency)
+		# Debug
+
 		prc = round(c.convert(currency, 'BRL', prc), 2)
 		val = prc * amnt
 
