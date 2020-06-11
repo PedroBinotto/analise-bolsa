@@ -3,6 +3,7 @@ from flask import Flask, request, render_template, url_for
 from flask_bootstrap import Bootstrap
 from itertools import zip_longest
 from forex_python.converter import CurrencyRates
+import sys
 import datetime
 import json
 import decimal
@@ -29,8 +30,8 @@ def quote(query):	# Contata API e ajusta os valores de moeda
 		currency = tickr.info['currency']
 
 		# Debug
-		print(prc)
-		print(currency)
+		print(prc, file=sys.stdout)
+		print(currency, file=sys.stdout)
 		# Debug
 
 		prc = round(c.convert(currency, 'BRL', prc), 2)
