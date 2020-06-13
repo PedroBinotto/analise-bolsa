@@ -25,7 +25,7 @@ def quote(query):	# Contata API e ajusta os valores de moeda
 		stock = str(query[0])
 		amnt = int(query[1])
 
-		tickr = Ticker(stock)# Informaçoes da ação (YFinance)
+		tickr = Ticker(stock)# Informaçoes da ação (yahooquery)
 		data = tickr.summary_detail
 
 		prc = data[stock]['regularMarketPreviousClose']

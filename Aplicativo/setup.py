@@ -12,7 +12,7 @@ setup(
 		'Flask>=0.10.1',
 		'Flask-Bootstrap',	
 		'requests>=2.20',
-		'yfinance',
+		'yahooquery',
 		'forex-python',
 		'BeautifulSoup4',
 		'html5lib'
