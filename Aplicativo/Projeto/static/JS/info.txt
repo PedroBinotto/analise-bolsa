@@ -171,3 +171,87 @@ def input_production():
 		final_queries('production')
 		return redirect('/result')
 '''
+
+yahooquery:
+
+summary_detail:
+
+maxAge 1
+priceHint 2
+previousClose 335.9
+open 344.72
+dayLow 334.2233
+dayHigh 347.8
+regularMarketPreviousClose 335.9
+regularMarketOpen 344.72
+regularMarketDayLow 334.2233
+regularMarketDayHigh 347.8
+dividendRate 3.28
+dividendYield 0.0098
+exDividendDate 2020-05-07 21:00:00
+payoutRatio 0.2408
+fiveYearAvgDividendYield 1.58
+beta 1.170435
+trailingPE 26.618479
+forwardPE 22.799461
+volume 48025829
+regularMarketVolume 48025829
+averageVolume 43439682
+averageVolume10days 35655900
+averageDailyVolume10Day 35655900
+bid 338.31
+ask 338.4
+bidSize 800
+askSize 1400
+marketCap 1468470919168
+fiftyTwoWeekLow 192.17
+fiftyTwoWeekHigh 354.77
+priceToSalesTrailing12Months 5.479758
+fiftyDayAverage 313.0023
+twoHundredDayAverage 292.65335
+trailingAnnualDividendRate 3.08
+trailingAnnualDividendYield 0.009169396
+currency USD
+fromCurrency None
+toCurrency None
+lastMarket None
+algorithm None
+tradeable False
+
+
+financial_data:
+{
+	'AAPL': 
+	{
+		'maxAge': 86400,
+		'currentPrice': 338.8,
+		'targetHighPrice': 390.0,
+		'targetLowPrice': 195.43,
+		'targetMeanPrice': 323.98,
+		'targetMedianPrice': 330.0,
+		'recommendationMean': 2.0,
+		'recommendationKey': 'buy',
+		'numberOfAnalystOpinions': 37,
+		'totalCash': 94051000320,
+		'totalCashPerShare': 21.699,
+		'ebitda': 77305004032, 
+		'totalDebt': 118760996864,
+		'quickRatio': 1.298,
+		'currentRatio': 1.496,
+		'totalRevenue': 267980996608,
+		'debtToEquity': 151.433,
+		'revenuePerShare': 60.097,
+		'returnOnAssets': 0.12377,
+		'returnOnEquity': 0.62094,
+		'grossProfits': 98392000000,
+		'freeCashflow': 45040123904,
+		'operatingCashflow': 75373002752,
+		'earningsGrowth': 0.037,
+		'revenueGrowth': 0.005,
+		'grossMargins': 0.3811,
+		'ebitdaMargins': 0.28847, 
+		'operatingMargins': 0.24475999,
+		'profitMargins': 0.21350001,
+		'financialCurrency': 'USD'
+	}
+}

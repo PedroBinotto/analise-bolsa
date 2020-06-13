@@ -1,4 +1,4 @@
-import yfinance as yf
+from yahooquery import Ticker
 from flask import Flask, request, render_template, url_for
 from flask_bootstrap import Bootstrap
 from itertools import zip_longest
@@ -25,14 +25,11 @@ def quote(query):	# Contata API e ajusta os valores de moeda
 		stock = str(query[0])
 		amnt = int(query[1])
 
-		tickr = yf.Ticker(stock)	# Informaçoes da ação (YFinance)
-		prc = tickr.info['regularMarketPreviousClose']
-		currency = tickr.info['currency']
+		tickr = Ticker(stock)# Informaçoes da ação (YFinance)
+		data = tickr.summary_detail
 
-		# Debug
-		print(prc, file=sys.stdout)
-		print(currency, file=sys.stdout)
-		# Debug
+		prc = data[stock]['regularMarketPreviousClose']
+		currency = data[stock]['currency']
 
 		prc = round(c.convert(currency, 'BRL', prc), 2)
 		val = prc * amnt
