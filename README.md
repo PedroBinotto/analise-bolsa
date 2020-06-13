@@ -9,7 +9,7 @@
   * **JS** - *Scripts JS processados pelo navegador*
     - app.js
 * **pycache** - *Cache*
-- __init__.py - *Aplicativo principal python+flask*
+- init - *Aplicativo principal python+flask*
 
 **Módulos utilizados:**
   * *Flask*
