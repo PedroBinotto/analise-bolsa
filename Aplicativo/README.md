@@ -14,7 +14,7 @@
 **Módulos utilizados:**
   * *Flask*
     * *Flask-Bootstrap*
-  * *YFinance*
+  * *YahooQuery*
   * *HTML5lib*
   * *BeautifulSoup4*
   * *Forex-Python*
