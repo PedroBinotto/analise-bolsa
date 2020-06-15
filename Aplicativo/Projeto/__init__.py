@@ -18,7 +18,7 @@ def grouper(n, iterable, fillvalue=None):
     return zip_longest(fillvalue=fillvalue, *args)
 
 
-def quote(query):				# Contata API e ajusta os valores de moeda
+def quote(query, convert):				# Contata API e ajusta os valores de moeda
 	try:
 		c = CurrencyRates()		# Valores de moeda (Forex-Python)
 
@@ -31,10 +31,13 @@ def quote(query):				# Contata API e ajusta os valores de moeda
 		prc = data[stock]['regularMarketPreviousClose']
 		currency = data[stock]['currency']
 
-		prc = round(c.convert(currency, 'BRL', prc), 2)
-		val = prc * amnt
-
-		return [stock, prc, amnt, val, 'BRL']
+		if convert:				# Conversão de moeda
+			prc = round(c.convert(currency, 'BRL', prc), 2)
+			val = prc * amnt
+			return [stock, prc, amnt, val, 'BRL']
+		
+		val = prc * amnt		# Sem conversão
+		return [stock, prc, amnt, val, currency]
 	except:
 		return ['SÍMBOLO INVÁLIDO', 0, 0, 0]	# Em caso de erro interno
 
@@ -50,8 +53,16 @@ def index():
 	else:						# **Com consulta
 		data = request.form
 
+		if request.form.getlist('convert'):
+			convert = True
+			data = data.to_dict()
+			data.popitem()
+		else:
+			convert = False
+			print(data, file=sys.stdout)
+
 		for i in grouper(2, data.values()):
-			json_data.append(quote(i))
+			json_data.append(quote(i, convert))
 		
 		info = json_data
 		cb = []
