@@ -9,12 +9,12 @@
   * **JS** - *Scripts JS processados pelo navegador*
     - app.js
 * **pycache** - *Cache*
-- app.py - *Aplicativo principal python+flask*
+- init - *Aplicativo principal python+flask*
 
 **Módulos utilizados:**
   * *Flask*
     * *Flask-Bootstrap*
-  * *YFinance*
+  * *YahooQuery*
   * *HTML5lib*
   * *BeautifulSoup4*
   * *Forex-Python*
