@@ -44,6 +44,12 @@ function createControll(NoOfRec) {  // Gerar campo de pesquisa
                 "</tr>";
     }
     tbl += "</table>" +
+    "<label for='convert' class='custom-label'>" +
+        "<input type='checkbox' name='convert' value='convert'>" +
+        "<span class='checkmark'></span>" +
+        "Converter valores estrangeiros para BRL" +
+    "</label>" +
+    "<br>" +
     "<input type='submit' value='OK' class='button'>";          // Botão enviar
 
     $("#AddControll").append(tbl);                              // Adicionar campo
