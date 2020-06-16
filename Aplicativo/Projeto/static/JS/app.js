@@ -45,7 +45,7 @@ function createControll(NoOfRec) {  // Gerar campo de pesquisa
     }
     tbl += "</table>" +
     "<label for='convert' class='custom-label'>" +
-        "<input type='checkbox' name='convert' value='convert'>" +
+        "<input type='checkbox' name='convert' value='convert'>" +  // Checkbox para conversão
         "<span class='checkmark'></span>" +
         "Converter valores estrangeiros para BRL" +
     "</label>" +

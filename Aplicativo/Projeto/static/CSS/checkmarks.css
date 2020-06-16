@@ -16,7 +16,7 @@
 /* Hide the browser's default checkbox */
 .custom-label input {
 	position: absolute;
-	left: 0;
+	left: 3px;
 	z-index: 999;
 	opacity: 0;
 	cursor: pointer;
@@ -29,8 +29,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 25px;
-	width: 25px;
+	height: 24px;
+	width: 24px;
 	background-color: #eee;
 }
 
