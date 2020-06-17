@@ -59,7 +59,6 @@ def index():
 			data.popitem()
 		else:
 			convert = False
-			print(data, file=sys.stdout)
 
 		for i in grouper(2, data.values()):
 			json_data.append(quote(i, convert))
